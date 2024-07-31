@@ -1,0 +1,32 @@
+#include<stdio.h>
+void menu()
+{
+	printf("\n1.1+2+....+n");
+	printf("\n2.1/2 +2/3 + ...+ n/n+1");
+	printf("\n3.1+1/3+...+1/(2n+1)");
+	printf("\n4.1*2+2*3+...+n*n+1");
+}
+int tong(int n)
+{
+	if (n == 1)
+		return 1;
+	else
+		return n + tong(n - 1);
+}
+int main()
+{
+	int lc, n;
+	do {
+		menu();
+		printf("\nMoi ban chon ");
+		scanf_s("%d", &lc);
+		switch (lc)
+		{
+		case 1:
+			printf("Nhap vao n\n ");
+			scanf_s("%d", &n);
+			printf("1+2+....+%d = %d \n", n, tong(n));
+		}
+	} while (lc < 5);
+	return 0;
+}
