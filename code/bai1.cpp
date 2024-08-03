@@ -20,6 +20,13 @@ float tongphanso(int n)
 	else
 		return (float)n / (n + 1) + tong(n - 1);
 }
+float tong1(int n)
+{
+	if (n == 0)
+		return 1;
+	else
+		return (float)1 / (2 * n + 1) + tong(n - 1);
+}
 int main()
 {
 	int lc, n;
@@ -40,6 +47,13 @@ int main()
 			printf("Nhap vao n\n ");
 			scanf_s("%d", &n);
 			printf("1/2 +2/3 + ...+ %d/(%d+1 )= %0.2f \n", n, n, tongphanso(n));
+		}break;
+		case 3:
+		{
+			int t = 1.67;
+			printf("Nhap vao n\n ");
+			scanf_s("%d", &n);
+			printf("1+1/3+...+1/(2*%d+1) = %0.2f \n", n, tong1(n));
 		}break;
 		}
 	} while (lc < 5);
